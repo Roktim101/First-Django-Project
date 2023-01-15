@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Signup</title>
+{% endblock %}
+
+{% block body %}
+    <form name="" action="" method="POST">
+        <br>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Save">
+    </form> <br>
+    <h4 style="color: red; text-align: center">{{msg}}</h4>
+{% endblock %}

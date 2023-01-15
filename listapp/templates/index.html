@@ -1,0 +1,40 @@
+{%extends "base.html" %}
+
+{% block title %}
+    <title>Adding List</title>
+{% endblock %}
+
+{% block body %}
+<br><br>
+    <form action="add_lists/" method="post" class="form-inline">
+      {% csrf_token %}
+
+      <center>
+          <input type="text" maxlength="50" name="content" class="form form-control-sm"
+                 placeholder=" Type here . . .    (max 50 letters / digits / punctuation marks)" size="100">
+          <input type="submit" value="   Add   " class="btn btn-success">
+      </center>
+    </form><br>
+
+    <table class="table table-primary table-striped table-hover">
+        <thead>
+            <tr align="center">
+                <th scope="col">DATE</th>
+                <th scope="col">TEXT</th>
+                <th scope="col">ACTION</th>
+            </tr>
+        </thead>
+        <tbody >
+            {% for list_item in list_items %}
+            <tr align="center" >
+                <td scope="col">{{list_item.added_date}}</td>
+                <td scope="col">{{list_item.text}}</td>
+                <td scope="col">
+                    <a href='delete/{{list_item.id}}' class="navbar-brand; btn btn-danger">DELETE</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

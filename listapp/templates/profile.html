@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Profile</title>
+{% endblock %}
+
+{% block body %}
+    <center><br><br><br><br>
+        {% if row.is_superuser == False %}
+        <h5 style="color: darkgreen">Name : Mr. {{row.username}} </h5>
+        {% else %}
+        <h5 style="color: darkgreen">Name : Mr. {{row.username}} (SUPERUSER)</h5>
+        {% endif %}
+        <h5 style="color: darkgreen">Email : {{row.email}}</h5>
+        <h5 style="color: darkgreen">Joined on {{row.date_joined}}</h5>
+    </center>
+{% endblock %}

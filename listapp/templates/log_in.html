@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Login / Signup</title>
+{% endblock %}
+
+{% block body %}
+
+
+<center>
+    <form action="" method="post">
+        {% csrf_token %}
+        <br><br><br><br><br><br><br>
+        <input type="text" name="username" placeholder="username"><br><br>
+        <input type="password" name="password" placeholder="password"><br><br>
+        <h6 style="color: red">{{msg}}</h6><br>
+        <input type="submit" value="Login" class="btn btn-dark"><br><br><br><br><br>
+        <a href="/signup" class="navbar-brand; btn btn-info">Create an account</a>
+    </form>
+
+</center>
+    <br><br><br><br>
+    <table border="2" class="table table-hover table-bordered table-striped">
+        <tr style="text-align: center; font-family:georgia" class="table-success">
+            <td size="50" valign="bottom">Create an account if you don't have one</td>
+        </tr>
+    </table>
+{% endblock %}
